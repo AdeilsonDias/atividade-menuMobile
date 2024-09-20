@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(29, 29, 29);
+}
+.header_menu{
+    background-color: rgb(77, 78, 78);
+    padding: 25px;
+}
+.menu-desktop{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.menu-desktop h1{
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 8px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.menu-desktop ul li {
+    list-style: none;
+}
+.menu-desktop ul li a {
+
+    color: rgb(189, 184, 184);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 24px;
+    transition: 0.7s ease-in-out;
+}
+.menu-desktop ul li a:hover{
+    color: white;
+    border-bottom: 2px solid black;
+}
+
+.openMenu{
+    display: none;
+    text-align: center;
+    background-color: rgb(2, 2, 2);
+    color: white;
+    border-radius: 10px;
+    padding: 8px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.menu-mobile{
+    position: absolute;
+    left: -900px;
+ 
+}
+.menu-mobile h1 {
+    margin-bottom: 24px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 255, 21);
+    padding: 8px;
+    width: 40px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.menu-mobile ul li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-mobile ul li a {
+    text-decoration: none;
+    margin-top: 20px;
+    background-color: black;
+    width: 50vw;
+    text-align: center;
+    color: blanchedalmond;
+    border-radius: 10px;
+    padding: 8px;
+    transition: 0.5s ease-in-out;
+}
+.menu-mobile ul li a:hover{
+    transform:scale(1.2);
+    background-color: rgba(158, 158, 158, 0.479)
+}
+.menu-mobile.active{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%);
+    animation: identifier 0.9s ease-in-out;
+}
+
+@keyframes identifier {
+    0%{
+        transform: translateY(-200%);
+    }
+    
+}
+@media  screen and (max-width:745px) {
+    .menu-desktop{
+        display: none;
+    }  
+    .menu-mobile.active{
+        display: flex;
+    }
+
+    .openMenu{
+        display: block;
+    }
+}
